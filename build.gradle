@@ -1,0 +1,22 @@
+group 'com.zzz'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.apache.thrift', name: 'libthrift', version: '0.10.0'
+    compile files("/usr/local/Cellar/jmeter/3.2/libexec/lib/ext/ApacheJMeter_core.jar")
+    compile files("/usr/local/Cellar/jmeter/3.2/libexec/lib/ext/ApacheJMeter_java.jar")
+}
+
+task install (type: Copy) {
+    dependsOn 'build'
+    from "build/libs/"
+    into "/usr/local/Cellar/jmeter/3.2/libexec/lib/ext/"
+}
