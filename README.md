@@ -1,7 +1,7 @@
 ## 简单jmeter thrift 调用 sampler 示例
 
 ### preconditions
-1. mac platform, installed jmeter & gradle with homebrew
+1. mac platform, installed jmeter-3.2 & gradle with homebrew
 2. put libthrift.jar into lib of jmeter
 ### usage
 1. gradle install at project root (will build the sampler jar and copy to lib/ext of jmeter)
